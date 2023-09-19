@@ -1,0 +1,19 @@
+SELECT c.Nome AS Cliente, COUNT(p.PedidoID) AS TotalPedidos
+FROM Cliente c
+LEFT JOIN Pedido p ON c.ClienteID = p.ClienteID
+GROUP BY c.Nome;
+
+
+-- Vendedor também é Fornecedor
+
+SELECT v.Nome AS Vendedor, f.Nome AS Fornecedor
+FROM Vendedor v
+INNER JOIN Fornecedor f ON v.Nome = f.Nome;
+
+
+
+-- Relação de Fornecedores e nome dos Produtos
+
+SELECT f.Nome AS Fornecedor, p.Nome AS Produto
+FROM Fornecedor f
+INNER JOIN Produto p ON f.FornecedorID = p.FornecedorID;
